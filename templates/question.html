@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>PREDICTORS FOR SUCCESS</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/questionsStyle.css') }}">
+</head>
+<body>
+    <article id="post">
+        <nav class="page-heading mint bar">
+            <div class="wrap normal">
+                <h1 class="entry-title">PREDICTORS FOR SUCCESS</h1>
+            </div>
+        </nav>
+        <form class="form" method="POST" action="/submit-quiz" name="quiz">
+            <div class="wrap normal">
+                <div class="page-intro" id="questions-container">
+                    <div class="question-container">
+                        <div class="question">
+                            <div class="question-index-container">
+                                <div class="question-index">Question <span id="currentQuestionIndex">1</span>/<span id="totalQuestions"></span></div>
+                            </div>
+                            <div class="question-text-container">
+                               <!-- Questions will be loaded here -->
+                            </div>
+                        </div>
+                    </div>
+                    <div class="navigation-buttons">
+                        <button type="button" id="prevButton" onclick="prevQuestion()" style="display: none;">Previous</button>
+                        <button type="button" id="nextButton" onclick="nextQuestion()">Next</button>
+                        <button type="button" id="submitButton" onclick="submitQuiz()" style="display: none;">Submit</button>
+                    </div>                    
+                </div>
+            </div>
+            <input type="hidden" name="form-name" value="quiz">
+        </form>
+    </article>
+
+    <div id="toast" class="toast"></div>
+
+    <script>
+        const questionsUrl = "{{ url_for('static', filename='data/questions.txt') }}";
+        const indexUrl = "{{ url_for('index') }}";
+    </script>
+
+    <script src="{{ url_for('static', filename='js/questionsJS.js') }}"></script>
+</body>
+</html>
