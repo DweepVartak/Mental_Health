@@ -1,0 +1,460 @@
+[
+    {
+        "text": "Have you ever been diagnosed with a psychiatric disorder?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "text": "Have you experienced any form of abuse (physical, emotional, sexual) during your childhood?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "text": "Have you experienced any traumatic events during your childhood? (e.g., bullying, discrimination, subject to any injustices in family or schools)",
+        "options": ["No", "Yes"]
+    },
+    {
+        "text": "Have you experienced the loss of a family member or close friend recently?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "text": "Have any of your family members been diagnosed with a mental illness?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "text": "Did your mother experience any significant health issues during her pregnancy with you?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "text": "Have you ever been affected by domestic violence or domestic abuse directly or by witnessing it?",
+        "options": ["No", "Yes"]
+    },
+    {
+        "text": "How would you rate your ability to interact and communicate effectively with others?",
+        "options": ["Very good", "Good", "Satisfactory", "Inadequate"]
+    },
+    {
+        "text": "Did you have access to adequate educational opportunities during your childhood and adolescence?",
+        "options": [
+            "Had adequate access to educational opportunities",
+            "Had inadequate access to educational opportunities",
+            "Had limited access to educational opportunities",
+            "Had severe difficulties i.e., frequent challenges in accessing educational opportunities"
+        ]
+    },
+    {
+        "text": "How well do you manage and cope with your emotions, particularly during times of stress or difficulty?",
+        "options": [
+            "Excellently, I manage my emotions well even during stressful times",
+            "Moderately well, I can cope with my emotions most of the time, but sometimes struggle during stress or difficulty",
+            "Not very well, I often find it challenging to manage my emotions, especially during stressful times",
+            "Poorly, I have significant difficulty managing my emotions, especially during stress or difficulty"
+        ]
+    },
+    {
+        "text": "Did you experience any financial hardships or economic deprivation during your childhood?",
+        "options": [
+            "No, I did not experience any financial hardships or economic deprivation during my childhood",
+            "Mildly, I experience occasional financial difficulties, but it did not significantly impact my overall well-being",
+            "Moderately, I faced consistent financial hardships during my childhood, which affected various aspects of my life",
+            "Severely, I experienced extreme economic deprivation during my childhood, leading to significant challenges in meeting basic needs"
+        ]
+    },
+    {
+        "text": "Have you ever felt socially isolated or disconnected from others during your childhood or adolescence?",
+        "options": [
+            "No, I have never felt socially isolated or disconnected from others during my childhood or adolescence",
+            "Mildly, I occasionally felt socially isolated or disconnected, but it was not a pervasive feeling",
+            "Moderately, I often felt socially isolated or disconnected, which affected my social interactions and well-being",
+            "Severely, I consistently felt socially isolated or disconnected, leading to significant emotional distress and difficulties in forming relationships"
+        ]
+    },
+    {
+        "text": "Do you often act without thinking about the consequences?",
+        "options": [
+            "Rarely acts without considering consequences",
+            "Sometimes acts without considering consequences",
+            "Often acts without considering consequences",
+            "Always acts without considering consequences"
+        ]
+    },
+    {
+        "text": "Do you often feel unworthy or inadequate?",
+        "options": [
+            "Rarely feels unworthy or inadequate",
+            "Sometimes feels unworthy or inadequate",
+            "Often feels unworthy or inadequate",
+            "Always feels unworthy or inadequate"
+        ]
+    },
+    {
+        "text": "Have you withdrawn from friends or social activities that you used to enjoy?",
+        "options": [
+            "No withdrawal from social activities",
+            "Rarely withdrawn from social activities",
+            "Sometimes withdrawn from social activities",
+            "Frequently withdrawn from social activities"
+        ]
+    },
+    {
+        "text": "Do you prefer to spend time alone rather than with others?",
+        "options": [
+            "Prefers spending time with others",
+            "Occasionally prefers spending time alone",
+            "Often prefers spending time alone",
+            "Always prefers spending time alone"
+        ]
+    },
+    {
+        "text": "Do you find it difficult to cope with stress?",
+        "options": [
+            "Never",
+            "Occasionally",
+            "Frequently",
+            "Always"
+        ]
+    },
+    {
+        "text": "Do you feel connected and supported by friends, family, or peers?",
+        "options": [
+            "Always",
+            "Frequently",
+            "Occasionally",
+            "Never"
+        ]
+    },
+    {
+        "text": "Have you noticed any changes in your motivation or interest in academics?",
+        "options": [
+            "No, no change",
+            "Mild, changes",
+            "Moderate, experienced frequent changes",
+            "Severe, significant change"
+        ]
+    },
+    {
+        "text": "Do you feel supported and valued in your environment?",
+        "options": [
+            "Always",
+            "Frequently",
+            "Occasionally",
+            "Never"
+        ]
+    },
+    {
+        "text": "Do you notice any changes to your coping strategies?",
+        "options": [
+            "Not at all",
+            "Mildly",
+            "To some extent",
+            "Significantly"
+        ]
+    },
+    {
+        "text": "How would you rate your level of coping ability?",
+        "options": [
+            "Very good",
+            "Good",
+            "Satisfactory",
+            "Inadequate"
+        ]
+    },
+    {
+        "text": "Have there been any recent changes in your social support network?",
+        "options": [
+            "No change",
+            "Change does not affect me",
+            "Reduced and affects me",
+            "Significantly reduced and it affects me"
+        ]
+    },
+    {
+        "text": "Do you feel pressure from family or society to meet certain academic expectations?",
+        "options": [
+            "There is minimal or no expectation",
+            "There is some pressure, but it's manageable",
+            "I feel noticeable pressure from family or society to meet certain academic expectations",
+            "The pressure from family or society to meet certain academic expectations is overwhelming, causing severe distress"
+        ]
+    },
+    {
+        "text": "Do you experience financial difficulties or struggles that cause stress?",
+        "options": [
+            "Not at all",
+            "Occasional difficulties",
+            "Frequent difficulties",
+            "Continuous financial difficulties"
+        ]
+    },
+    {
+        "text": "Have you experienced challenges adjusting to a new culture or environment in community or school?",
+        "options": [
+            "I have not experienced challenges",
+            "Minor challenges, but overall, I have adapted well",
+            "Adjusting to the new culture or environment has been moderately challenging",
+            "I have experienced significant challenges adjusting to the new culture or environment"
+        ]
+    },
+    {
+        "text": "Do you feel pressure to conform to societal norms or expectations?",
+        "options": [
+            "I do not feel pressured",
+            "Mild pressure to conform at times",
+            "I feel moderate pressure to conform",
+            "I experience significant pressure to conform"
+        ]
+    },
+    {
+        "text": "If any, what has been your experience with health challenges or medical conditions that affects your life?",
+        "options": [
+            "I do not have any health challenges",
+            "Occasionally impact my life but are manageable",
+            "Frequently affect my life and require ongoing management",
+            "Significantly impact my daily life and require intensive management or treatment"
+        ]
+    },
+    {
+        "text": "Do you have concerns or goals for your future?",
+        "options": [
+            "I have no concerns",
+            "I am concerned to some extent",
+            "I am significantly concerned",
+            "I am excessively concerned"
+        ]
+    },
+    {
+        "text": "Rate your level of stress related to academic workload.",
+        "options": [
+            "Not at all",
+            "Mild stress",
+            "Moderate stress",
+            "Severe stress"
+        ]
+    },
+    {
+        "text": "How stressed do you feel about your involvement in extracurricular activities (sports, clubs, etc.)?",
+        "options": [
+            "Not at all",
+            "Mild",
+            "Moderately",
+            "Severely"
+        ]
+    },
+    {
+        "text": "Rate your level of stress related to managing your time effectively.",
+        "options": [
+            "Not at all",
+            "Mild",
+            "Moderately",
+            "Severely"
+        ]
+    },
+    {
+        "text": "Do you feel down, depressed, or hopeless?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you feel your appetite has reduced as compared to earlier?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you have trouble in falling asleep or remaining asleep?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you feel it would be better if you were dead?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Have you been feeling more irritable, angry than usual?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Have you been doing more risky things than usual?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Have you been sleeping less than usual but still have lot of energy?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Have you been talking to even strangers as if they were your close friends?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Have you been indulging in spending money excessively?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Have you been feeling nervous, frightened, worried or on the edge?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you feel unable to stop or control worrying?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you feel afraid that something awful might happen?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you get thoughts of actually hurting yourself?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Have you been suffering from unexplained aches or pains?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you get unpleasant thoughts urges or images that repeatedly enter your mind?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you feel driven to perform certain behaviors or mental acts over and over again?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you feel detached from yourself, your body, your physical surroundings or your memories?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you feel you are not knowing who you really are or what you want out of life?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you think you are not feeling close to other people or enjoying your relationships with them?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Have you neglected other activities because you wanted to use social media?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    },
+    {
+        "text": "Do you spend excessive time playing video games?",
+        "options": [
+            "Not at all",
+            "A little bit",
+            "Moderately",
+            "Quite a bit",
+            "Extremely"
+        ]
+    }
+]

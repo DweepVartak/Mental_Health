@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>ASSESSMENT</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap");
+
+      body {
+        font-family: "Inter", Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #fcfcfc;
+        display: flex;
+        flex-direction: column;
+        height: 100vh;
+        overflow: hidden;
+      }
+
+      .page-heading {
+        background-color: #c0e7e8b0;
+        color: #3a485eac;
+        padding: 3px 0;
+        text-align: center;
+        font-size: 14px;
+        position: fixed;
+        top: 0;
+        width: 100%;
+        z-index: 10;
+      }
+
+      .main-content {
+        display: flex;
+        flex: 1;
+        justify-content: center;
+        align-items: center;
+        margin-top: 60px; /* Adjust based on the height of your navbar */
+      }
+
+      .navigation-buttons {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        width: 550px;
+        padding: 10px;
+        gap: 40px;
+      }
+
+      .navigation-buttons button {
+        background-color: #6a92934b;
+        color: #3a485ec5;
+        border: none;
+        padding: 20px 30px;
+        cursor: pointer;
+        border-radius: 40px;
+        font-size: 20px;
+        border: 1px solid #3a485ec5;
+        width: 100%;
+        min-height: 80px;
+        margin-bottom: 20px; /* Add space between buttons */
+      }
+
+      .navigation-buttons button:last-of-type {
+        margin-bottom: 0; /* Remove margin for the last button */
+      }
+
+      .navigation-buttons button:hover {
+        background-color: #6a929377;
+      }
+
+      .btn1 {
+        margin: 5;
+        padding: 5px;
+      }
+
+      .toast {
+        visibility: hidden;
+        max-width: 250px;
+        background-color: #1b1b1bdd;
+        color: #fff;
+        text-align: center;
+        border-radius: 4px;
+        padding: 16px;
+        position: fixed;
+        z-index: 1;
+        left: 50%;
+        bottom: 30px;
+        transform: translateX(-50%);
+      }
+
+      .toast.show {
+        visibility: visible;
+        animation: fadeIn 0.5s, fadeOut 0.5s 2.5s;
+      }
+
+      @keyframes fadeIn {
+        from {
+          opacity: 0;
+        }
+        to {
+          opacity: 1;
+        }
+      }
+
+      @keyframes fadeOut {
+        from {
+          opacity: 1;
+        }
+        to {
+          opacity: 0;
+        }
+      }
+
+      @media (max-width: 630px) {
+        .navigation-buttons {
+          width: 330px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <nav class="page-heading">
+      <h1 class="entry-title">SELECT THE ASSESSMENT TO ATTEMPT</h1>
+    </nav>
+    <div class="main-content">
+      <div class="navigation-buttons">
+        <form action="{{ url_for('select_question') }}" method="POST">
+          <button type="submit" name="question_option" value="question1">
+            ASSESSMENT FOR PREDICTORS FOR SUCCESS
+          </button>
+          <button type="submit" name="question_option" value="question2">
+            ASSESSMENT OF RISK FOR DEVELOPING A MENTAL HEALTH CONDITION
+          </button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Toast Notification Container -->
+    <div id="toast" class="toast"></div>
+
+    <script></script>
+  </body>
+</html>
