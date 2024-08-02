@@ -18,7 +18,7 @@ const answers = []; // Store answers here
 
 // Function to load questions
 function loadQuestions() {
-  fetch("/static/data/gform2.json")
+  fetch("/static/data/OGgform2.json")
     .then((response) => response.json())
     .then((data) => {
       data.forEach((question) => {

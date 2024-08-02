@@ -3,17 +3,18 @@ from flask_session import Session
 from pymongo import MongoClient
 import uuid 
 import json 
+from config import Connection_String
 
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'mongodb'
 app.config['SESSION_PERMANENT'] = False
  
-# Connect to MongoDB
-client = MongoClient('AddYourDBConnectoinStringHere')
+
+client = MongoClient(Connection_String)
 app.config['SESSION_MONGODB'] = client
 
-# Initialize Flask-Session
 Session(app)
+
 
 db = client['quiz_database']
 collection = db['combined_data']  # Collection for combined data
