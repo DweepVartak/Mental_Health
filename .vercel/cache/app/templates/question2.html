@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>RISK ANALYSIS</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/question2Style.css') }}"
+    />
+  </head>
+  <body>
+    <article id="post">
+      <nav class="page-heading mint bar">
+        <div class="wrap normal">
+          <h1 class="entry-title">
+            ASSESSMENT OF RISK FOR DEVELOPING A MENTAL HEALTH CONDITION
+          </h1>
+        </div>
+      </nav>
+      <form
+        class="form"
+        method="POST"
+        action="{{ url_for('submit_question2') }}"
+      >
+        <div class="wrap normal">
+          <div class="page-intro" id="questions-container">
+            <div class="question-container">
+              <div class="question">
+                <div class="question-index-container">
+                  <div class="question-index">
+                    Question <span id="currentQuestionIndex">1</span>/<span
+                      id="totalQuestions"
+                    ></span>
+                  </div>
+                </div>
+                <div class="question-text-container">
+                  <!-- Questions will be loaded here -->
+                </div>
+              </div>
+            </div>
+            <div class="navigation-buttons">
+              <button
+                type="button"
+                id="prevButton"
+                onclick="prevQuestion()"
+                style="display: none"
+              >
+                Previous
+              </button>
+              <button type="button" id="nextButton" onclick="nextQuestion()">
+                Next
+              </button>
+              <button
+                type="submit"
+                id="submitButton"
+                onclick="submitQuiz()"
+                style="display: none"
+              >
+                Submit
+              </button>
+            </div>
+          </div>
+        </div>
+      </form>
+    </article>
+    <!-- Toast Notification Container -->
+    <div id="toast" class="toast"></div>
+
+    <script src="{{ url_for('static', filename='js/question2JS.js') }}"></script>
+  </body>
+</html>

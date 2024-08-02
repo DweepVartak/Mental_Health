@@ -1,0 +1,636 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, viewport-fit=cover"
+    />
+    <title>Demographics Form</title>
+    <link
+      rel="stylesheet"
+      href="{{ url_for('static', filename='css/indexStyle.css') }}"
+    />
+  </head>
+  <body>
+    <nav class="page-heading mint bar">
+      <div class="wrap normal">
+        <h1 class="entry-title">MENTAL HEALTH ASSESSMENT</h1>
+      </div>
+    </nav>
+    <div class="wrap">
+      <div class="disclaimer-container">
+        <p><strong>Legal Disclaimer</strong></p>
+        <p>
+          This disclaimer governs your use of the test developed by Dr. Amresh
+          Kumar Srivastava. It is disseminated and promoted by the Mansik Shakti
+          Foundation ("Foundation"). By accessing or using the test, you agree
+          to be bound by this disclaimer. If you do not agree with any part of
+          this disclaimer, you must not use the test.
+        </p>
+
+        <p><strong>Purpose of the Test</strong></p>
+        <p>
+          The test is designed to provide information, resources, and tools
+          related to navigating challenges faced by students in their daily
+          lives, particularly pertaining to mental health. The questionnaire
+          included in the test has been developed and tested by a team led by
+          Dr. Amresh Srivastava, a psychiatrist, to assess various aspects of
+          mental health, including mental health challenges, positive mental
+          health, mental health risk and vulnerability, mental state, and
+          psychiatric warning signs.
+        </p>
+
+        <p><strong>Not a Substitute for Professional Advice</strong></p>
+        <p>
+          The information provided by the test is for educational and
+          informational purposes only. It is not intended to replace or serve as
+          an alternative to professional medical/psychiatrist/psychological
+          advice, diagnosis, or treatment. The test is not a substitute for
+          in-person consultation with a qualified mental health professional,
+          therapist, or counselor. Users of the test are encouraged to consult
+          with their mental health professional for personalized advice and
+          treatment. All information provided by the test is provided in good
+          faith for general information only. We make no representation or
+          warranty of any kind, express or implied, regarding the accuracy,
+          adequacy, validity, reliability, suitability, availability, or
+          completeness of any information provided by the test. Any reliance you
+          place on such information is therefore strictly at your own risk.
+        </p>
+
+        <p><strong>Awareness and Promotion of Mental Health</strong></p>
+        <p>
+          The test is intended to create awareness about mental health issues
+          and promote mental well-being among users. It aims to empower
+          individuals to better understand their mental health and seek
+          appropriate support and resources when needed. However, the test does
+          not provide medical or psychological diagnoses, and its results should
+          not be construed as such. Through this test, you are able to link to
+          other websites which are not under our control. We have no control
+          over the nature, content, and availability of those sites. The
+          inclusion of any links does not necessarily imply a recommendation or
+          endorse the views expressed within them.
+        </p>
+
+        <p><strong>Registration Agreement</strong></p>
+        <p>
+          By registering for the test, you acknowledge that you have read,
+          understood, and agreed to this disclaimer. You also consent to the
+          collection, storage, and use of your personal information in
+          accordance with the Foundation's privacy policy.
+        </p>
+
+        <p><strong>Limitation of Liability</strong></p>
+        <p>
+          Dr. Amresh Srivastava, researchers and authors of the psychometric
+          scales, the Foundation, its affiliates, partners, and contributors
+          shall not be liable for any direct, indirect, incidental,
+          consequential, or special damages arising out of or in any way
+          connected with the use or inability to use the test, including but not
+          limited to damages for loss of profits, data, or goodwill.
+        </p>
+
+        <p><strong>Modification of Disclaimer</strong></p>
+        <p>
+          The developers and the Foundation reserve the right to modify, amend,
+          or update this disclaimer at any time without prior notice. Users are
+          advised to review this disclaimer periodically for any changes.
+        </p>
+
+        <p><strong>Governing Law</strong></p>
+        <p>
+          This disclaimer shall be governed by and construed in accordance with
+          the laws of India. Any dispute arising out of or in connection with
+          this disclaimer shall be subject to the exclusive jurisdiction of the
+          Courts of Mumbai, India.
+        </p>
+
+        <p><strong>Contact Information</strong></p>
+        <p>
+          If you have any questions or concerns regarding this disclaimer,
+          please contact us at
+          <a href="mailto:mansikshakti@gmail.com">mansikshakti@gmail.com</a>.
+        </p>
+
+        <p><strong>Acceptance of Disclaimer</strong></p>
+        <p>
+          By registering for the test, you confirm that you have read,
+          understood, and agreed to this disclaimer in its entirety.
+        </p>
+
+        <p>Signature:</p>
+        <p>Date:</p>
+      </div>
+      <div class="form-container">
+        <h1>Demographics Form</h1>
+        <form
+          id="demographicsForm"
+          action="{{ url_for('submit_demographics') }}"
+          method="POST"
+        >
+          <div class="form-group">
+            <div class="formsec">
+              <label class="col-form-label" for="name" id="name-label"
+                >Name:</label
+              >
+              <input
+                class="form-control"
+                id="name"
+                name="name"
+                placeholder="Enter your full name"
+                required
+                type="text"
+              />
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="email" id="email-label"
+                >Email:</label
+              >
+              <input
+                class="form-control"
+                id="email"
+                name="email"
+                placeholder="Enter your email address"
+                required
+                type="email"
+              />
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="number" id="age-label"
+                >Age</label
+              >
+              <select class="form-control" id="dropdown" name="age">
+                <option disabled selected value>
+                  Select your appropriate age range
+                </option>
+                <option value="18-24">18-24</option>
+                <option value="25-34">25-34</option>
+                <option value="35-44">35-44</option>
+                <option value="45-54">45-54</option>
+                <option value="55-64">55-64</option>
+                <option value="65+">65+</option>
+              </select>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="dob" id="dob-label"
+                >Date of Birth:</label
+              >
+              <input
+                class="form-control"
+                style="width: 97%; height: 80%"
+                type="date"
+                id="dob"
+                name="dob"
+              />
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="gender" id="gender-label"
+                >Gender:</label
+              >
+              <select class="form-control" id="gender" name="gender">
+                <option disabled selected value>Select your gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+                <option value="non-binary">Non-binary/Third Gender</option>
+                <option value="prefer-not-say">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="education" id="edu-label"
+                >Educational Level:</label
+              >
+              <select class="form-control" id="education" name="education">
+                <option disabled selected value>
+                  Select your educational level
+                </option>
+                <option value="no-formal">No formal education</option>
+                <option value="primary">Primary education</option>
+                <option value="secondary">Secondary education</option>
+                <option value="higher-secondary">
+                  Higher secondary education
+                </option>
+                <option value="undergraduate">Undergraduate degree</option>
+                <option value="postgraduate">Postgraduate degree</option>
+                <option value="doctorate">Doctorate</option>
+                <option value="vocational">Vocational training</option>
+                <option value="other">Other (please specify)</option>
+              </select>
+              <div class="other-input" id="other-education">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Specify other educational level"
+                />
+              </div>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="occupation" id="occu-label"
+                >Occupation:</label
+              >
+              <select class="form-control" id="occupation" name="occupation">
+                <option disabled selected value>Select your occupation</option>
+                <option value="student">Student</option>
+                <option value="unemployed">Unemployed</option>
+                <option value="employed">Employed (full-time/part-time)</option>
+                <option value="self-employed">Self-employed</option>
+                <option value="retired">Retired</option>
+                <option value="homemaker">Homemaker</option>
+                <option value="other">Other (please specify)</option>
+              </select>
+              <div class="other-input" id="other-occu">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Specify other occupation"
+                />
+              </div>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="income" id="inc-label"
+                >Income Level:</label
+              >
+              <select class="form-control" id="income" name="income">
+                <option disabled selected value>
+                  Select your income level
+                </option>
+                <option value="below-20000">Below 20,000 INR per month</option>
+                <option value="20000-40000">
+                  20,000 - 40,000 INR per month
+                </option>
+                <option value="40000-60000">
+                  40,000 - 60,000 INR per month
+                </option>
+                <option value="60000-80000">
+                  60,000 - 80,000 INR per month
+                </option>
+                <option value="80000-100000">
+                  80,000 - 100,000 INR per month
+                </option>
+                <option value="above-100000">
+                  Above 100,000 INR per month
+                </option>
+                <option value="prefer-not-say-income">Prefer not to say</option>
+              </select>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="marital-status" id="ms-label"
+                >Marital Status:</label
+              >
+              <select
+                class="form-control"
+                id="marital-status"
+                name="marital-status"
+              >
+                <option disabled selected value>
+                  Select your marital status
+                </option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+                <option value="separated">Separated</option>
+                <option value="in-relationship">In a relationship</option>
+                <option value="prefer-not-say-marital">
+                  Prefer not to say
+                </option>
+              </select>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="location" id="loc-label"
+                >Location:</label
+              >
+              <select
+                class="form-control"
+                id="city-town"
+                name="city-town"
+                style="margin-bottom: 5px"
+              >
+                <option disabled selected value>City/Town</option>
+                <option value="city">City</option>
+                <option value="town">Town</option>
+              </select>
+              <select class="form-control" id="urs" name="urs">
+                <option disabled selected value>Urban/Rural/Suburban</option>
+                <option value="urban">Urban</option>
+                <option value="rural">Rural</option>
+                <option value="sub">Suburban</option>
+              </select>
+              <input
+                class="form-control"
+                type="text"
+                id="state"
+                name="state"
+                placeholder="State"
+              />
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="ethnicity" id="eth-label"
+                >Ethnicity/Race:</label
+              >
+              <select class="form-control" id="ethnicity" name="ethnicity">
+                <option disabled selected value>
+                  Select your ethnicity/race
+                </option>
+                <option value="indian">Indian</option>
+                <option value="african">African</option>
+                <option value="caucasian">Caucasian</option>
+                <option value="hispanic-latino">Hispanic/Latino</option>
+                <option value="asian">Asian</option>
+                <option value="mixed">Mixed</option>
+                <option value="other">Other (please specify)</option>
+                <option value="prefer-not-say-ethnicity">
+                  Prefer not to say
+                </option>
+              </select>
+              <div class="other-input" id="other-ethnicity">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Specify other ethnicity"
+                />
+              </div>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="family-history" id="fh-label"
+                >Family History of Mental Health Issues:</label
+              >
+              <select
+                class="form-control"
+                id="family-history"
+                name="family-history"
+              >
+                <option disabled selected value>
+                  Select your family history of mental health issues
+                </option>
+                <option value="other">Yes (please specify)</option>
+                <option value="no-family">No</option>
+                <option value="prefer-not-say-family">Prefer not to say</option>
+              </select>
+              <div class="other-input" id="other-famhistory">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Specify other family history"
+                />
+              </div>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="personal-history" id="ph-label"
+                >Personal History of Mental Health Issues:</label
+              >
+              <select
+                class="form-control"
+                id="personal-history"
+                name="personal-history"
+              >
+                <option disabled selected value>
+                  Select your personal histor of mental health issues
+                </option>
+                <option value="other">Yes (please specify)</option>
+                <option value="no-personal">No</option>
+                <option value="prefer-not-say-personal">
+                  Prefer not to say
+                </option>
+              </select>
+              <div class="other-input" id="other-perhistory">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Specify other personal history"
+                />
+              </div>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="substance-use" id="suse-label"
+                >Substance Use:</label
+              >
+              <div>
+                <input type="checkbox" id="alcohol" name="alcohol" />
+                <label for="alcohol">Alcohol</label>
+              </div>
+              <div>
+                <input type="checkbox" id="tobacco" name="tobacco" />
+                <label for="tobacco">Tobacco</label>
+              </div>
+              <div>
+                <input type="checkbox" id="drugs" name="drugs" />
+                <label for="drugs">Drugs</label>
+              </div>
+              <input type="checkbox" id="pnts" name="Prefer not to say" />
+              <label value="prefer-not-say-substance">Prefer not to say</label>
+            </div>
+
+            <div class="formsec">
+              <label
+                class="col-form-label"
+                for="history-trauma-abuse"
+                id="hta-label"
+                >History of Trauma or Abuse:</label
+              >
+              <select
+                class="form-control"
+                id="history-trauma-abuse"
+                name="history-trauma-abuse"
+              >
+                <option disabled selected value>
+                  Select your history of trauma or abuse
+                </option>
+                <option value="other">Yes (please specify)</option>
+                <option value="no-trauma">No</option>
+                <option value="prefer-not-say-trauma">Prefer not to say</option>
+              </select>
+              <div class="other-input" id="other-history">
+                <input
+                  class="form-control"
+                  type="text"
+                  placeholder="Specify other history"
+                />
+              </div>
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="resilience-score" id="rs-label"
+                >Resilience and Positivity Factors</label
+              >
+              <input
+                class="form-control"
+                type="text"
+                id="resilience-score"
+                name="resilience-score"
+                placeholder="Self-reported resilience score (using a validated scale such as CD-RISC)"
+              />
+              <input
+                class="form-control"
+                type="text"
+                id="positivity-score"
+                name="positivity-score"
+                placeholder="Self-reported positivity score (using a validated scale)"
+              />
+            </div>
+
+            <div class="formsec">
+              <label class="col-form-label" for="social-support" id="ss-label"
+                >Social Support Networks:</label
+              >
+              <div>
+                <input
+                  type="checkbox"
+                  id="supportive-family"
+                  name="supportive-family"
+                />
+                <label for="supportive-family"
+                  >Presence of supportive family and friends</label
+                >
+              </div>
+              <div>
+                <input
+                  type="checkbox"
+                  id="community-groups"
+                  name="community-groups"
+                />
+                <label for="community-groups"
+                  >Participation in community or social groups</label
+                >
+              </div>
+            </div>
+
+            <div class="formsec">
+              <label
+                class="col-form-label"
+                for="academic-functioning"
+                id="af-label"
+                >Academic Functioning:</label
+              >
+              <div class="formsec">
+                <label class="col-form-label" for="attendance-punctuality"
+                  >Attendance and punctuality</label
+                >
+                <select
+                  class="form-control"
+                  id="attendance-punctuality"
+                  name="attendance-punctuality"
+                >
+                  <option disabled selected value>
+                    Select your attendance and punctuality
+                  </option>
+                  <option value="yes">yes</option>
+                  <option value="no">no</option>
+                </select>
+              </div>
+              <div class="formsec">
+                <label
+                  class="col-form-label"
+                  for="academic-performance"
+                  id="ap-label"
+                  >Academic performance and grades:</label
+                >
+                <select
+                  class="form-control"
+                  id="academic-performance"
+                  name="academic-performance"
+                >
+                  <option disabled selected value>
+                    Select your academic performance
+                  </option>
+                  <option value="excellent">Excellent</option>
+                  <option value="good">Good</option>
+                  <option value="average">Average</option>
+                  <option value="poor">Poor</option>
+                </select>
+              </div>
+              <div class="formsec">
+                <label class="col-form-label" for="extracurricular-activities"
+                  >Participation in extracurricular activities</label
+                >
+                <select
+                  class="form-control"
+                  id="extracurricular-activities"
+                  name="extracurricular-activities"
+                >
+                  <option disabled selected value>
+                    Select your participation in extracurricular activities
+                  </option>
+                  <option value="yes">yes</option>
+                  <option value="no">no</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="formsec">
+              <label
+                class="col-form-label"
+                for="social-functioning"
+                id="socf-label"
+                >Social Functioning:</label
+              >
+              <div class="formsec">
+                <label
+                  class="col-form-label"
+                  for="relationships-peers-family"
+                  id="rpf-label"
+                  >Quality of relationships with peers and family:</label
+                >
+                <select
+                  id="relationships-peers-family"
+                  name="relationships-peers-family"
+                >
+                  <option disabled selected value>
+                    Select your quality of relationships
+                  </option>
+                  <option value="excellent">Excellent</option>
+                  <option value="good">Good</option>
+                  <option value="average">Average</option>
+                  <option value="poor">Poor</option>
+                </select>
+              </div>
+              <div class="formsec">
+                <label
+                  class="col-form-label"
+                  for="social-skills"
+                  id="socs-label"
+                  >Social skills and interactions:</label
+                >
+                <select id="social-skills" name="social-skills">
+                  <option disabled selected value>
+                    Select your social skills and interactions
+                  </option>
+                  <option value="excellent">Excellent</option>
+                  <option value="good">Good</option>
+                  <option value="average">Average</option>
+                  <option value="poor">Poor</option>
+                </select>
+              </div>
+              <div class="formsec">
+                <label class="col-form-label" for="sense-belonging"
+                  >Sense of belonging and community involvement</label
+                >
+                <select class="form-control" id="sense" name="sense">
+                  <option disabled selected value>
+                    Select your sense of belonging and community involvement
+                  </option>
+                  <option value="yes">yes</option>
+                  <option value="no">no</option>
+                </select>
+              </div>
+            </div>
+          </div>
+
+          <button type="submit">Next</button>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
