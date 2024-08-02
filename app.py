@@ -3,7 +3,11 @@ from flask_session import Session
 from pymongo import MongoClient
 import uuid 
 import json 
-from dotenv import CONNECTION_STRING
+from dotenv import load_dotenv
+import os
+
+load_dotenv()
+CONNECTION_STRING = os.getenv('CONNECTION_STRING')
 
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'mongodb'
