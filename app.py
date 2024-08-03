@@ -1,26 +1,26 @@
-from flask import Flask, render_template, request, redirect, url_for, session
-from flask_session import Session
+from flask import Flask, render_template, request, redirect, url_for
 from pymongo import MongoClient
-import uuid 
-import json 
+import json
 from dotenv import load_dotenv
 import os
 
+# Load environment variables
 load_dotenv()
 CONNECTION_STRING = os.getenv('CONNECTION_STRING')
 
+# Initialize Flask app
 app = Flask(__name__)
-app.config['SESSION_TYPE'] = 'mongodb'
-app.config['SESSION_PERMANENT'] = False
-app.config['SESSION_MONGODB'] = MongoClient(CONNECTION_STRING)
-app.config['SESSION_MONGODB_DB'] = 'quiz_database'  # Name of your database for sessions
-app.config['SESSION_MONGODB_COLLECT'] = 'sessions' 
 
-Session(app)
-
-client = MongoClient(CONNECTION_STRING)
-db = client['quiz_database']
-collection = db['combined_data']  # Collection for combined data
+# Initialize MongoDB client
+try:
+    client = MongoClient(CONNECTION_STRING, serverSelectionTimeoutMS=5000)  # 5 seconds timeout
+    db = client['quiz_database']
+    collection = db['combined_data']  # Collection for combined data
+    # Test the connection
+    client.server_info()
+except Exception as e:
+    print(f"Error connecting to MongoDB: {e}")
+    raise
 
 @app.route('/')
 def index():
@@ -29,11 +29,6 @@ def index():
 @app.route('/submit_demographics', methods=['POST'])
 def submit_demographics():
     if request.method == 'POST':
-        # Generate a unique identifier for the user
-        user_id = str(uuid.uuid4())
-        
-        session['user_id'] = user_id
-
         demographics_data = {
             'name': request.form.get('name'),
             'email': request.form.get('email'),
@@ -67,7 +62,6 @@ def submit_demographics():
         }
 
         demographics_document = {
-            'user_id': user_id,
             'demographics': demographics_data,
             'question1_data': {},
             'question2_data': {}
@@ -100,22 +94,13 @@ def question2():
 @app.route('/submit_question1', methods=['POST'])
 def submit_question1():
     if request.method == 'POST':
-        user_id = session.get('user_id')
-        if not user_id:
-            return redirect(url_for('index'))
-
         question1_data = request.form.to_dict()
-        collection.update_one({'user_id': user_id}, {'$set': {'question1_data': question1_data}})
-
-        return redirect(url_for('result1', question='question1'))
+        collection.update_one({}, {'$set': {'question1_data': question1_data}}, upsert=True)
+        return redirect(url_for('result1'))
 
 @app.route('/submit_question2', methods=['POST'])
 def submit_question2():
     if request.method == 'POST':
-        user_id = session.get('user_id')
-        if not user_id:
-            return redirect(url_for('index'))
-
         # Collect all question data
         question2_data = request.form.to_dict()
 
@@ -123,39 +108,19 @@ def submit_question2():
         question2_answers = json.loads(question2_data.get('answers', '[]'))
 
         # Store the data in MongoDB
-        collection.update_one({'user_id': user_id}, {'$set': {'question2_data': question2_answers}})
-
-        return redirect(url_for('result2', question='question2'))
-
-
-
+        collection.update_one({}, {'$set': {'question2_data': question2_answers}}, upsert=True)
+        return redirect(url_for('result2'))
 
 @app.route('/result1')
 def result1():
-    # Retrieve user_id from session
-    user_id = session.get('user_id')
-
-    # If user_id is not found in session, handle error or redirect to demographics page
-    if not user_id:
-        return redirect(url_for('index'))
-
     # Retrieve combined data from MongoDB
-    combined_data = collection.find_one({'user_id': user_id})
-
+    combined_data = collection.find_one()
     return render_template('result1.html', combined_data=combined_data)
 
 @app.route('/result2')
 def result2():
-    # Retrieve user_id from session
-    user_id = session.get('user_id')
-
-    # If user_id is not found in session, handle error or redirect to demographics page
-    if not user_id:
-        return redirect(url_for('index'))
-
     # Retrieve combined data from MongoDB
-    combined_data = collection.find_one({'user_id': user_id})
-
+    combined_data = collection.find_one()
     return render_template('result2.html', combined_data=combined_data)
 
 if __name__ == '__main__':
