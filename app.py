@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 # Initialize MongoDB client
 try:
-    client = MongoClient(CONNECTION_STRING, serverSelectionTimeoutMS=5000)  # 5 seconds timeout
+    client = MongoClient(CONNECTION_STRING)
     db = client['quiz_database']
     collection = db['combined_data']  # Collection for combined data
     # Test the connection
