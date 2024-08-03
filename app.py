@@ -12,14 +12,13 @@ CONNECTION_STRING = os.getenv('CONNECTION_STRING')
 app = Flask(__name__)
 app.config['SESSION_TYPE'] = 'mongodb'
 app.config['SESSION_PERMANENT'] = False
- 
-
-client = MongoClient(CONNECTION_STRING)
-app.config['SESSION_MONGODB'] = client
+app.config['SESSION_MONGODB'] = MongoClient(CONNECTION_STRING)
+app.config['SESSION_MONGODB_DB'] = 'quiz_database'  # Name of your database for sessions
+app.config['SESSION_MONGODB_COLLECT'] = 'sessions' 
 
 Session(app)
 
-
+client = MongoClient(CONNECTION_STRING)
 db = client['quiz_database']
 collection = db['combined_data']  # Collection for combined data
 
